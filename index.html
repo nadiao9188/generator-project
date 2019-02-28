@@ -5,33 +5,75 @@
     <meta charset="UTF-8">
     <title>jQuery Template</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato:300|Oswald|PT+Serif|Petit+Formal+Script" rel="stylesheet">
     <script>
         $(function() {
+            $('button').click(function() {
+                var name = $('#name').val();
+                var job = $('#job').val();
+                var site = $('#site').val();
+                var email = $('#email').val();
+                var phone = $('#phone').val();
+                var address = $('#address').val();
+                var color1 = $('#color1').val();
+                var color2 = $('#color2').val();
+                var color3 = $('#color3').val();
+                var background = $('#background').val();
+                var font = $('select').val();
 
+                var info = name + job + site + email + phone + address + color1 + color2 + color3 + background + font;
+                $('div').html
+                
+                // set font
+                if (font == 'Oswald') {
+                    //set font
+                    $('div').css('font-family', 'Oswald');
+                }
+                else if (font == 'Lato') {
+                    $("div").css('font-family', 'Lato');
+                }
+                else if (font == 'Abril Fatface') {
+                    $("div").css('font-family', 'Abril Fatface');
+                }
+                else if (font == 'PT Serif') {
+                    $("div").css('font-family', 'PT Serif');
+                }
+                else if (font == 'Petit Formal Script') {
+                    $("div").css('font-family', 'Petit Formal Script');
+                }
+            });
         });
     </script>
 </head>
 
 <body>
     <h1>Business Card Generator</h1>
-    Name: <input id="name"><br> 
-    Job Title: <input id="job"><br> 
-    Website: <input id="site"><br> 
-    Email: <input id="email"><br> 
-    Phone Number: <input id="phone"><br> 
-    Address: <input id="address"><br> 
+    Name: <input id="name" value='Nadia'><br> 
+    Job Title: <input id="job" value='Student'><br> 
+    Website: <input id="site" value='github.com/nadiao9188'><br> 
+    Email: <input id="email" value='nadiao9188@hstat.org'><br> 
+    Phone Number: <input id="phone" value='123-456-7890'><br>
+    Address: <input id="address" value='3rd Ave'><br> 
     Color 1: <input type="color" id="color1"><br> 
     Color 2: <input type="color" id="color2"><br> 
-    Color 3: <input type="color" id="color3"><br>
-    Background: <input id="background"><br>
-    Font: <select><option value="Oswald">Oswald</option>
-                  <option value="Lato">Lato</option>
-                  <option value="Abril Fatface">Abril Fatface</option>
-                  <option value="PT Serif">PT Serif</option>
-                  <option value="Petit Formal Script">Petit Formal Script</option>
-                  
-          </select><br>
+    Color 3: <input type="color" id="color3"><br> 
+    Background: <select>
+                    <option value="Modern">Modern</option>
+                    <option value="Colorful">Colorful</option>
+                    <option value="Nature">Nature</option>
+                    <option value="Minimal">Minimal</option>
+                </select><br>
+    Font:<select>
+            <option value="Oswald">Oswald</option>
+            <option value="Lato">Lato</option>
+            <option value="Abril Fatface">Abril Fatface</option>
+            <option value="PT Serif">PT Serif</option>
+            <option value="Petit Formal Script">Petit Formal Script</option>
+         </select><br>
     <button>Generate Business Card!</button>
+
+    <div></div>
 
 </body>
 
