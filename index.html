@@ -17,17 +17,14 @@
                 var phone = $('#phone').val();
                 var address = $('#address').val();
                 var color1 = $('#color1').val();
-                var color2 = $('#color2').val();
-                var color3 = $('#color3').val();
                 var background = $('#background').val();
                 var font = $('select').val();
 
-                var info = name + job + site + email + phone + address + color1 + color2 + color3 + background + font;
-                $('div').html
+                var info = name + job + site + email + phone + address;
+                $('div').html(info);
                 
                 // set font
                 if (font == 'Oswald') {
-                    //set font
                     $('div').css('font-family', 'Oswald');
                 }
                 else if (font == 'Lato') {
@@ -55,9 +52,7 @@
     Email: <input id="email" value='nadiao9188@hstat.org'><br> 
     Phone Number: <input id="phone" value='123-456-7890'><br>
     Address: <input id="address" value='3rd Ave'><br> 
-    Color 1: <input type="color" id="color1"><br> 
-    Color 2: <input type="color" id="color2"><br> 
-    Color 3: <input type="color" id="color3"><br> 
+    Font Color: <input type="color" id="color1"><br> 
     Background: <select>
                     <option value="Modern">Modern</option>
                     <option value="Colorful">Colorful</option>
