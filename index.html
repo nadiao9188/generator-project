@@ -7,6 +7,19 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato:300|Oswald|PT+Serif|Petit+Formal+Script" rel="stylesheet">
+    <style>
+        div {
+            margin-top: 50px;
+            margin-left: 10px;
+            width: 500px;
+            height: 300px;
+            border: solid;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom right, aliceblue, lightskyblue);
+        }
+    </style>
     <script>
         $(function() {
             $('button').click(function() {
@@ -18,27 +31,15 @@
                 var address = $('#address').val();
                 var color1 = $('#color1').val();
                 var background = $('#background').val();
-                var font = $('select').val();
+                var font = $('#font').val();
 
-                var info = name + job + site + email + phone + address;
-                $('div').html(info);
-                
-                // set font
-                if (font == 'Oswald') {
-                    $('div').css('font-family', 'Oswald');
-                }
-                else if (font == 'Lato') {
-                    $("div").css('font-family', 'Lato');
-                }
-                else if (font == 'Abril Fatface') {
-                    $("div").css('font-family', 'Abril Fatface');
-                }
-                else if (font == 'PT Serif') {
-                    $("div").css('font-family', 'PT Serif');
-                }
-                else if (font == 'Petit Formal Script') {
-                    $("div").css('font-family', 'Petit Formal Script');
-                }
+                $('div').html(name).css({
+                    'font-family': font,
+                    'font-size': 40,
+                    'text-align': 'center'
+                });
+
+
             });
         });
     </script>
@@ -46,20 +47,13 @@
 
 <body>
     <h1>Business Card Generator</h1>
-    Name: <input id="name" value='Nadia'><br> 
-    Job Title: <input id="job" value='Student'><br> 
-    Website: <input id="site" value='github.com/nadiao9188'><br> 
-    Email: <input id="email" value='nadiao9188@hstat.org'><br> 
-    Phone Number: <input id="phone" value='123-456-7890'><br>
-    Address: <input id="address" value='3rd Ave'><br> 
-    Font Color: <input type="color" id="color1"><br> 
-    Background: <select>
+    Name: <input id="name" value='Nadia'><br> Job Title: <input id="job" value='Student'><br> Website: <input id="site" value='github.com/nadiao9188'><br> Email: <input id="email" value='nadiao9188@hstat.org'><br> Phone Number: <input id="phone" value='123-456-7890'><br>    Address: <input id="address" value='3rd Ave'><br> Font Color: <input type="color" id="color1"><br> Background: <select id=background>
                     <option value="Modern">Modern</option>
                     <option value="Colorful">Colorful</option>
                     <option value="Nature">Nature</option>
                     <option value="Minimal">Minimal</option>
-                </select><br>
-    Font:<select>
+                </select><br> Font:
+    <select id=font>
             <option value="Oswald">Oswald</option>
             <option value="Lato">Lato</option>
             <option value="Abril Fatface">Abril Fatface</option>
@@ -68,7 +62,9 @@
          </select><br>
     <button>Generate Business Card!</button>
 
-    <div></div>
+    <div>
+
+    </div>
 
 </body>
 
