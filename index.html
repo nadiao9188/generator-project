@@ -9,15 +9,19 @@
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato:300|Oswald|PT+Serif|Petit+Formal+Script" rel="stylesheet">
     <style>
         div {
-            margin-top: 50px;
-            margin-left: 10px;
+            margin: auto;
             width: 500px;
-            height: 300px;
+            height: 250px;
             border: solid;
+            text-align: center;
+            line-height: 20px;
         }
 
         body {
             background-image: linear-gradient(to bottom right, aliceblue, lightskyblue);
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: Arial;
         }
     </style>
     <script>
@@ -29,17 +33,38 @@
                 var email = $('#email').val();
                 var phone = $('#phone').val();
                 var address = $('#address').val();
-                var color1 = $('#color1').val();
                 var background = $('#background').val();
                 var font = $('#font').val();
 
-                $('div').html(name).css({
+                $('.name').html(name).css({
                     'font-family': font,
-                    'font-size': 40,
-                    'text-align': 'center'
+                    'font-size': 30
+                })
+
+                $('.job').html(job).css({
+                    'font-family': font,
+                    'font-size': 20
                 });
 
+                $('.site').html("Website: " + site).css({
+                    'font-family': font,
+                    'font-size': 15
+                });
 
+                $('.email').html("Email: " + email).css({
+                    'font-family': font,
+                    'font-size': 15
+                });
+
+                $('.phone').html("Phone Number: " + phone).css({
+                    'font-family': font,
+                    'font-size': 15
+                });
+
+                $('.address').html("Address: " + address).css({
+                    'font-family': font,
+                    'font-size': 15
+                });
             });
         });
     </script>
@@ -47,12 +72,8 @@
 
 <body>
     <h1>Business Card Generator</h1>
-    Name: <input id="name" value='Nadia'><br> Job Title: <input id="job" value='Student'><br> Website: <input id="site" value='github.com/nadiao9188'><br> Email: <input id="email" value='nadiao9188@hstat.org'><br> Phone Number: <input id="phone" value='123-456-7890'><br>    Address: <input id="address" value='3rd Ave'><br> Font Color: <input type="color" id="color1"><br> Background: <select id=background>
-                    <option value="Modern">Modern</option>
-                    <option value="Colorful">Colorful</option>
-                    <option value="Nature">Nature</option>
-                    <option value="Minimal">Minimal</option>
-                </select><br> Font:
+    Name: <input id="name" value='Nadia Ousman'><br> Job Title: <input id="job" value='Student'><br> Website: <input id="site" value='github.com/nadiao9188'><br> Email: <input id="email" value='nadiao9188@hstat.org'><br> Phone Number: <input id="phone"
+        value='123-456-7890'><br> Address: <input id="address" value='3rd Ave'><br> Background Color: <input type="color" id="background"><br> Font:
     <select id=font>
             <option value="Oswald">Oswald</option>
             <option value="Lato">Lato</option>
@@ -62,10 +83,17 @@
          </select><br>
     <button>Generate Business Card!</button>
 
-    <div>
 
-    </div>
 
 </body>
+
+<div>
+    <p class="name"></p>
+    <p class="job"></p>
+    <p class="site"></p>
+    <p class="email"></p>
+    <p class="phone"></p>
+    <p class="address"></p>
+</div>
 
 </html>
