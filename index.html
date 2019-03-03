@@ -17,11 +17,19 @@
             line-height: 20px;
         }
 
-        body {
+        .questions {
             background-image: linear-gradient(to bottom right, aliceblue, lightskyblue);
             text-align: center;
-            margin-bottom: 30px;
             font-family: Arial;
+        }
+
+        button {
+            margin: 15px 0px 30px 0px;
+        }
+
+        input {
+            padding: 6px 0px;
+            margin: 8px 0;
         }
     </style>
     <script>
@@ -36,41 +44,26 @@
                 var background = $('#background').val();
                 var font = $('#font').val();
 
-                $('.name').html(name).css({
-                    'font-family': font,
-                    'font-size': 30
-                })
+                $('.name').html(name).css({ 'font-family': font, 'font-size': 30 })
 
-                $('.job').html(job).css({
-                    'font-family': font,
-                    'font-size': 20
-                });
+                $('.job').html(job).css({ 'font-family': font, 'font-size': 20 });
 
-                $('.site').html("Website: " + site).css({
-                    'font-family': font,
-                    'font-size': 15
-                });
+                $('.site').html("Website: " + site).css({ 'font-family': font, 'font-size': 15 });
 
-                $('.email').html("Email: " + email).css({
-                    'font-family': font,
-                    'font-size': 15
-                });
+                $('.email').html("Email: " + email).css({ 'font-family': font, 'font-size': 15 });
 
-                $('.phone').html("Phone Number: " + phone).css({
-                    'font-family': font,
-                    'font-size': 15
-                });
+                $('.phone').html("Phone Number: " + phone).css({ 'font-family': font, 'font-size': 15 });
 
-                $('.address').html("Address: " + address).css({
-                    'font-family': font,
-                    'font-size': 15
-                });
+                $('.address').html("Address: " + address).css({ 'font-family': font, 'font-size': 15 });
+
+                $('div').css('background-color', background);
             });
         });
     </script>
+
 </head>
 
-<body>
+<body class=questions>
     <h1>Business Card Generator</h1>
     Name: <input id="name" value='Nadia Ousman'><br> Job Title: <input id="job" value='Student'><br> Website: <input id="site" value='github.com/nadiao9188'><br> Email: <input id="email" value='nadiao9188@hstat.org'><br> Phone Number: <input id="phone"
         value='123-456-7890'><br> Address: <input id="address" value='3rd Ave'><br> Background Color: <input type="color" id="background"><br> Font:
@@ -82,9 +75,6 @@
             <option value="Petit Formal Script">Petit Formal Script</option>
          </select><br>
     <button>Generate Business Card!</button>
-
-
-
 </body>
 
 <div>
