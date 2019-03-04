@@ -8,25 +8,50 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato:300|Oswald|PT+Serif|Petit+Formal+Script" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px 10px 0px 10px;
+            border: none;
+        }
+
+        .column:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row{
+            height: 200px;
+        }
+
         div {
             margin-left: auto;
             margin-right: auto;
             padding-bottom: 20px;
             width: 500px;
             height: 250px;
-            border: 2px solid black;
             text-align: center;
             line-height: 20px;
         }
 
-        .questions {
+        .card {
+            border: 2px solid black;
+            height: 270px;
+        }
+
+        body {
             background-image: linear-gradient(to bottom right, aliceblue, lightskyblue);
             text-align: center;
             font-family: Arial;
         }
 
         button {
-            margin: 15px 0px 30px 0px;
+           margin-bottom: 50px;
         }
 
         input {
@@ -58,34 +83,44 @@
 
                 $('.address').html("Address: " + address).css({ 'font-family': font, 'font-size': 15 });
 
-                $('div').css('background-color', background);
+                $('.card').css('background-color', background);
             });
         });
     </script>
 
 </head>
 
-<body class=questions>
+<body>
     <h1>Business Card Generator</h1>
-    Name: <input id="name" value='Nadia Ousman'><br> Job Title: <input id="job" value='Student'><br> Website: <input id="site" value='github.com/nadiao9188'><br> Email: <input id="email" value='nadiao9188@hstat.org'><br> Phone Number: <input id="phone"
-        value='123-456-7890'><br> Address: <input id="address" value='3rd Ave'><br> Background Color: <input type="color" id="background"><br> Font:
-    <select id=font>
-            <option value="Oswald">Oswald</option>
-            <option value="Lato">Lato</option>
-            <option value="Abril Fatface">Abril Fatface</option>
-            <option value="PT Serif">PT Serif</option>
-            <option value="Petit Formal Script">Petit Formal Script</option>
-         </select><br>
+    <div class="row">
+        <div class="column">
+            Name: <input id="name" value='Nadia Ousman'><br> Job Title: <input id="job" value='Student'><br> Website: <input id="site" value='github.com/nadiao9188'><br>Email: <input id="email" value='nadiao9188@hstat.org'><br>
+        </div>
+
+        <div class="column">
+            Phone Number: <input id="phone" value='123-456-7890'><br> Address: <input id="address" value='3rd Ave'><br> Background Color: <input type="color" id="background"><br> Font:
+            <select id=font>
+                    <option value="Oswald">Oswald</option>
+                    <option value="Lato">Lato</option>
+                    <option value="Abril Fatface">Abril Fatface</option>
+                    <option value="PT Serif">PT Serif</option>
+                    <option value="Petit Formal Script">Petit Formal Script</option>
+                 </select><br>
+
+        </div>
+
+    </div>
     <button>Generate Business Card!</button>
+    <div class=card>
+        <p class="name"></p>
+        <p class="job"></p>
+        <p class="site"></p>
+        <p class="email"></p>
+        <p class="phone"></p>
+        <p class="address"></p>
+    </div>
 </body>
 
-<div>
-    <p class="name"></p>
-    <p class="job"></p>
-    <p class="site"></p>
-    <p class="email"></p>
-    <p class="phone"></p>
-    <p class="address"></p>
-</div>
+
 
 </html>
