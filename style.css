@@ -32,6 +32,7 @@ div {
 .card {
     border: 2px solid black;
     height: 270px;
+    margin-top: 30px;
 }
 
 body {
@@ -41,9 +42,7 @@ body {
 }
 
 button {
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 10px;
 }
 
 input {
